@@ -49,11 +49,12 @@ const Admindashboard = () => {
 
   function updateEmployee(val) {
     const url = `http://localhost:3000/find/${val}`
-    console.log(val);
+    // console.log(val);
     axiosInstance.get(url).then(res => {
-      alert(res.data.message);
-      console.log(res.data);
-      navigate('/updateEmployee');
+      // alert(res.data.message);
+      const employee =res.data.employee;
+      // console.log(res.data);
+      navigate('/updateEmployee', { state: { val, employee } });
    }).catch((error)=>{
     alert('Failed');
    })

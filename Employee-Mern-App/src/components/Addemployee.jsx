@@ -19,7 +19,7 @@ const Addemployee = () => {
      const navigate=useNavigate();
      
      function addEmployee() {
-          console.log(form);
+          // console.log(form);
           axiosInstance.post('http://localhost:3000/addEmployee',form).then(res => {
                alert(res.data.message);
                navigate('/admindashboard');

@@ -13,7 +13,7 @@ const Login = () => {
   const navigate=useNavigate();
 
   function loginValue(){
-    console.log(form);
+    // console.log(form);
     axios.post('http://localhost:3000/login/',form).then((res)=>{
      alert(res.data.message);
      if(res.data.key){
