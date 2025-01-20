@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Button, Paper, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import axiosInstance from './axiosInterceptor';
+
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -27,7 +29,7 @@ const Home = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/user/home/')
+    axiosInstance.get('http://localhost:3000/user/home/')
       .then(response => {
         setData(response.data);
       })
