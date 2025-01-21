@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Management</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/adde.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">Employee Manager</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/add">Add Employee</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Add Employee Form -->
+    <div id="addEmployeeForm" class="form-container">
+      <div class="form-title">Edit Employee: <%=employee.EmployeeName%></div>
+      <form id="employeeForm" action="/edit/<%=employee._id%>?_method=PUT" method="POST" >
+        <div class="form-group">
+          <label for="employeeId">Employee ID</label>
+          <input type="number" class="form-control" id="employeeId" name="EmployeeId" value="<%=employee.EmployeeId%>" disabled required>
+        </div>
+        <div class="form-group">
+          <label for="employeeName">Employee Name</label>
+          <input type="text" class="form-control" id="employeeName" name="EmployeeName" value="<%=employee.EmployeeName%>" required>
+        </div>
+        <div class="form-group">
+          <label for="employeeDesignation">Employee Designation</label>
+          <input type="text" class="form-control" id="employeeDesignation" name="EmployeeDesignation" value="<%=employee.EmployeeDesignation%>" required>
+        </div>
+        <div class="form-group">
+          <label for="employeeLocation">Employee Location</label>
+          <input type="text" class="form-control" id="employeeLocation" name="EmployeeLocation" value="<%=employee.EmployeeLocation%>" required>
+        </div>
+        <div class="form-group">
+          <label for="salary">Salary</label>
+          <input type="number" class="form-control" id="salary" name="Salary" value="<%=employee.Salary%>" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Edit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
